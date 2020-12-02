@@ -1,0 +1,21 @@
+class pig {
+    constructor(x,y,width,height){
+        this.body = Bodies.rectangle(x,y,width,height,{restitution:0.5});
+        World.add(world,this.body);
+        this.width=width;
+        this.height=height;
+
+    }
+
+    display(){
+      var angle = this.body.angle;
+      fill("red")
+      angleMode(RADIANS);
+      push();
+      translate(this.body.position.x,this.body.position.y)
+      rotate(angle);
+      rectMode(CENTER)
+      rect(0,0,this.width,this.height);
+      pop();
+    }
+}
